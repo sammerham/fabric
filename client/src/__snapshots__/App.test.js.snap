@@ -1,0 +1,35 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`matches snapshot 1`] = `
+<div>
+  <div>
+    <div>
+      <h1
+        class="sc-iCfMLu cKMWxr App-sameh"
+      >
+        Media Information
+      </h1>
+      <div
+        class="sc-gKclnd hrMEC"
+      >
+        <button
+          class="sc-furwcr grhNup"
+        >
+          Matrix
+        </button>
+        <button
+          class="sc-furwcr grhNup"
+        >
+          Matrix Revolutions
+        </button>
+        <button
+          class="sc-furwcr grhNup"
+        >
+          Matrix Reloaded
+        </button>
+      </div>
+    </div>
+    <div />
+  </div>
+</div>
+`;

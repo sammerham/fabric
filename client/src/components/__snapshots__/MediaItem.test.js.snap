@@ -1,0 +1,32 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`matches snapshot 1`] = `
+<div>
+  <div
+    class="sc-jRQBWg bdlPlA"
+  >
+    <img
+      alt="media"
+      class="sc-hKwDye iPhefi"
+      src="https://m.media-amazon.com/images/M/MV5BODE0MzZhZTgtYzkwYi00YmI5LThlZWYtOWRmNWE5ODk0NzMxXkEyXkFqcGdeQXVyNjU0OTQ0OTY@._V1_SX300.jpg"
+    />
+    <h3
+      class="sc-bdvvtL fWhxGB"
+    >
+      The Matrix Reloaded test
+    </h3>
+    <h6
+      class="sc-gsDKAQ drtXCm"
+    >
+      Release Year: 
+      2003
+    </h6>
+    <h6
+      class="sc-dkPtRN hRrCKw"
+    >
+      Media Type: 
+      movie
+    </h6>
+  </div>
+</div>
+`;
