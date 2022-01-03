@@ -8,7 +8,6 @@ export const StyledTitle = styled.h3`
   position:absolute;
   left:200px;
   margin-top:90px;
-  margin-right:40px;
   margin-left:60px;
 `;
 // Create a StyledTitle component that'll render an <h3> tag with some styles
@@ -19,7 +18,6 @@ export const StyledYear = styled.h6`
   position:absolute;
   left:200px;
   margin-top:145px;
-  margin-right:40px;
   margin-left:60px;
 `;
 // Create a StyledTitle component that'll render an <h3> tag with some styles
@@ -28,11 +26,8 @@ export const StyledType = styled.h6`
   font-size: 14px;
   margin-bottom: 10px;
   text-transform: capitalize;
-  // position:absolute;
-  left:200px;
   margin-top:175px;
-  margin-right:40px;
-  margin-left:0px;
+  margin-left:68px;
 `;
 
 
@@ -46,9 +41,7 @@ export const StyledImage = styled.img`
   border:1px solid gray;
   background-color: white;
   margin-top:60px;
-  margin-right:40px;
-  // position:absolute;
-  // left:20px;
+  margin-left:-30px;
 `;
 
 // Create a StyledInfoDiv component that'll render an <div> tag with some styles
