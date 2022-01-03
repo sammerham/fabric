@@ -4,22 +4,22 @@ const db = require("../db");
 
 
 class Poster {
-  /** get all media 
+  /** get all posters 
     returns
-{
-"Search": [
-    {
-    "Title": "The Matrix Revisited",
-    "Year": "2001",
-    "imdbID": "tt0295432",
-    "Type": "movie",
-    "Poster": "https://m.media-amazon.com/images/M/MV5BMTkzNjg3NjE4N15BMl5BanBnXkFtZTgwNTc3NTAwNzE@._V1_SX300.jpg"
+[
+"id": 1,
+"media_id": 1,
+"post": "https://m.media-amazon.com/images/M/MV5BNzQzOTk3OTAtNDQ0Zi00ZTVkLWI0MTEtMDllZjNkYzNjNTc4L2ltYWdlXkEyXkFqcGdeQXVyNjU0OTQ0OTY@._V1_SX300.jpg"
 }, .....]
    */
   // fn to get all posters records from db;
 
   static async showAll() {
-    const results = await db.query(`SELECT * FROM posters`);
+    const results = await db.query(`SELECT 
+    id,
+    media_id,
+    post
+    FROM posters`);
     return results.rows;
   }
 
@@ -46,7 +46,10 @@ class Poster {
   // fn to get a media record from db by imdbid;
   static async showPosterByMediaId (id) {
     const posterRecord = await db.query(
-      `SELECT * 
+      `SELECT 
+      id,
+      media_id,
+      post 
       FROM
       posters
       WHERE

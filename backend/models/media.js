@@ -20,7 +20,16 @@ class Media {
 }, .....]
    */
   static async showAll() {
-    const results = await db.query(`SELECT * FROM media`);
+    const results = await db.query(`
+    SELECT
+    id,
+    title,
+    imdbid,
+    media_type,
+    release_year
+    FROM
+    media
+    `);
     return results.rows;
   };
 
@@ -51,7 +60,12 @@ class Media {
  // fn to get a media record from db by imdbid;
   static async showMediaByimdbid(imdbid) {
     const mediaRecord = await db.query(
-      `SELECT * 
+      `SELECT 
+      id,
+      title,
+      imdbid,
+      media_type,
+      release_year 
       FROM
       media
       WHERE
