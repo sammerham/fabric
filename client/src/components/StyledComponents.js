@@ -53,7 +53,7 @@ export const StyledInfoDiv = styled.div`
 
 
 
-// Create a StyledDivStudent component that'll render an <div> tag with some styles
+// Create a StyledDivStudent component that'll render an <div> tag with some styles//
 export const StyledDivMedia = styled.div`
   display: flex;
   margin-left: 70px;
