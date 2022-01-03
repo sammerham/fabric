@@ -13,6 +13,9 @@ npm install
 ```
 ### API key
 Add your API Key in .envSample and then rename that file into (.env).
+You can get your API key from below link after your sign up:
+
+http://www.omdbapi.com/apikey.aspx
 
 ### Starting Server
 ```bash
