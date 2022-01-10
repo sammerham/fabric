@@ -1,6 +1,6 @@
-import React from 'react'
-import MediaItem from './MediaItem'
-
+import { React, useContext } from 'react';
+import MediaItem from './MediaItem';
+import MediaContext from '../mediaContext';
 
 
 /*
@@ -15,7 +15,8 @@ import MediaItem from './MediaItem'
  * App ---->> MediaList
  */
 
-function MediaList({data}) {
+function MediaList() {
+  const { data } = useContext(MediaContext);
   return (
     <div>
       {data?.map(d => < MediaItem item={d} key={d.imdbID}/>)}

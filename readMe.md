@@ -14,7 +14,7 @@ npm install
 ### API key
 Add your API Key in .envSample and then rename that file into (.env).
 
-### Starting Server
+### Starting Server 3001
 ```bash
 node server.js
 ```
@@ -31,7 +31,7 @@ Use the node package manager to install  install all the dependencies.
 ```bash
 npm install
 ```
-### Starting App
+### Starting App server 3000
 ```bash
 npm start
 ```
