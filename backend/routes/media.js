@@ -25,7 +25,7 @@ const Poster = require('../models/poster');
 router.get('/', async (req, res, next) => {
   try {
     const results = await Media.showAll()
-    res.json({media:results});
+    res.json({ media: results });
   } catch (err) {
     next(new NotFoundError)
   }
@@ -50,11 +50,10 @@ router.get("/matrix", async (req, res, next) => {
   try {
     const response = await axios.get(`${URL}s=Matrix&apikey=${API_KEY}`);
     let data = response.data['Search'];
-
     // map over results and insert into DB
     data.map(async d => {
       let mediaRecord = await Media.showMediaByimdbid(d.imdbID);
-      
+
       //inserting into DB only if record is unique;  
       if (mediaRecord.length === 0)
         await Media.addMedia(
@@ -62,7 +61,7 @@ router.get("/matrix", async (req, res, next) => {
           d.imdbID,
           d.Type,
           d.Year);
-      
+
       // check if poster exist, - inserting into DB into posters table
 
       let poster = d.Poster;
@@ -174,7 +173,7 @@ router.get("/matrixreloaded", async (req, res, next) => {
       const { id } = media[0];
       // check for duplicate poster in db
       let posterDB = await Poster.showPosterByMediaId(id);
-      if (!posterDB[0]) { 
+      if (!posterDB[0]) {
         await Poster.addPoster(poster, id);
       }
     });
