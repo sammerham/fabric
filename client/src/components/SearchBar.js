@@ -1,5 +1,4 @@
 import { React, useState, useContext } from 'react'
-
 import MediaContext from '../mediaContext';
 import {
   StyledSearchInput,
@@ -22,9 +21,7 @@ import MediaApi from '../api/mediaApi';
 
 function SearchBar() {
   const [formData, setFormData] = useState('');
-  
   const { setData } = useContext(MediaContext);
-  
   const { getMedia } = MediaApi;
   
 
@@ -33,27 +30,22 @@ function SearchBar() {
     const { value } = e.target;
     setFormData(data => value)
   };
-
-
-
+  
   //fn fetch new media data 
   async function fetchMatrixData(formData) {
     const MediaData = await getMedia(formData);
     setData(data => MediaData.Search);
   };
-
   
   // handleSubmit when form Submits
   const handleSubmit = e => {
     e.preventDefault();
     if (formData)
-      fetchMatrixData(formData)
+    fetchMatrixData(formData)
     setFormData("");
   };
-
-
-
-
+  
+  
   return (
     <div>
       <StyledSearchForm onSubmit={handleSubmit}>
