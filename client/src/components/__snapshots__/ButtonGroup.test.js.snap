@@ -27,6 +27,25 @@ exports[`matches snapshot 1`] = `
         Matrix Reloaded
       </button>
     </div>
+    <div>
+      <form
+        class="sc-kDTinF jSvsQF"
+      >
+        <input
+          class="sc-pVTFL xFLhP"
+          id="term"
+          name="term"
+          placeholder="Enter a search Term"
+          type="text"
+          value=""
+        />
+        <button
+          class="sc-jrQzAO bGNTCT"
+        >
+          Search
+        </button>
+      </form>
+    </div>
   </div>
 </div>
 `;

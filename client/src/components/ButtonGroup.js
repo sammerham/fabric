@@ -7,7 +7,7 @@ import {
 import MediaContext from '../mediaContext'
 import MediaApi from '../api/mediaApi';
 
-
+import SearchBar from './SearchBar';
 
 
 /*
@@ -23,10 +23,10 @@ import MediaApi from '../api/mediaApi';
  */
 
 
-
 function ButtonGroup() {
   const { setData } = useContext(MediaContext);
-  const { getAllMatrixMedia, getAllMatrixrevolutionsMedia, getAllMatrixreloadedMedia } = MediaApi;
+  // const { getAllMatrixMedia, getAllMatrixrevolutionsMedia, getAllMatrixreloadedMedia } = MediaApi;
+  const { getMedia } = MediaApi;
   
 
 
@@ -44,12 +44,13 @@ function ButtonGroup() {
 
   return (
     <div>
-    <StyledMainTitle bg={'#448565'} className='App-sameh'>Media Information</StyledMainTitle>
-    <StyledDivButton>
-        <StyledButton bg={'#58755b'} onClick={()=> handleClick(getAllMatrixMedia)}>Matrix</StyledButton>
-        <StyledButton bg={'#58755b'} onClick={() => handleClick(getAllMatrixrevolutionsMedia)}>Matrix Revolutions</StyledButton>
-        <StyledButton bg={'#58755b'} onClick={() => handleClick(getAllMatrixreloadedMedia)}>Matrix Reloaded</StyledButton> 
+      <StyledMainTitle bg={'#448565'} className='App-sameh'>Media Information</StyledMainTitle>
+      <StyledDivButton>
+        <StyledButton bg={'#58755b'} onClick={() => handleClick(() => getMedia('matrix'))}>Matrix</StyledButton>
+        <StyledButton bg={'#58755b'} onClick={()=>handleClick(() => getMedia('matrix revolutions'))}>Matrix Revolutions</StyledButton>
+        <StyledButton bg={'#58755b'} onClick={ ()=>handleClick(() => getMedia('matrix reloaded'))}>Matrix Reloaded</StyledButton> 
       </StyledDivButton>
+      <SearchBar />
     </div>
   )
 }

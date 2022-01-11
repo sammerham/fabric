@@ -15,22 +15,10 @@ class MediaApi {
     const res = await axios.get(`${URL}media`);
     return res.data;
   };
-
-  // get list of all media with matrix search keyword
-  static async getAllMatrixMedia() {
-    const res = await axios.get(`${URL}media/matrix`);
-    return res.data;
-  };
-
-  // get list of all media with matrixrevolutions search keyword
-  static async getAllMatrixrevolutionsMedia() {
-    const res = await axios.get(`${URL}media/matrixrevolutions`);
-    return res.data;
-  };
-
-  // get list of all media with matrixreloaded search keyword
-  static async getAllMatrixreloadedMedia() {
-    const res = await axios.get(`${URL}media/matrixreloaded`);
+  static async getMedia(str) {
+    // let newUrl = `${URL}media/${str}`
+    // console.log('newUrl', newUrl)
+    const res = await axios.get(`${URL}media/${str}`);
     return res.data;
   };
 }

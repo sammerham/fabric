@@ -31,7 +31,46 @@ router.get('/', async (req, res, next) => {
   }
 });
 
+router.get("/:s", async (req, res, next) => {
+  const term = req.params.s;
+  console.log('term', term)
+  const newURL = `${URL}s=${term}&apikey=${API_KEY}`
+  console.log('newURL in server', newURL);
+  try {
+    const response = await axios.get(`${URL}s=${term}&apikey=${API_KEY}`);
+    const data = response.data['Search'];
+    // map over results and insert into DB
+    data.map(async d => {
+      const mediaRecord = await Media.showMediaByimdbid(d.imdbID);
+      // for year strings like "2011–2018"  OR "2004–",
+      const year = d.Year.split('–')[0];
+      //inserting into DB only if record is unique;  
+      if (mediaRecord.length === 0)
+        await Media.addMedia(
+          d.Title,
+          d.imdbID,
+          d.Type,
+          year);
 
+      // check if poster exist, - inserting into DB into posters table
+
+      const poster = d.Poster;
+      // get id of record to relationship
+      const media = await Media.showMediaByimdbid(d.imdbID);
+      const { id } = media[0];
+      // check for duplicate poster in db
+      const posterDB = await Poster.showPosterByMediaId(id);
+      if (!posterDB[0]) {
+        await Poster.addPoster(poster, id);
+      }
+    });
+
+    res.status(200).json(response.data);
+  }
+  catch (err) {
+    next(new NotFoundError);
+  }
+});
 
 /* GET all media with matrix search keyword
 {
@@ -46,6 +85,7 @@ router.get('/', async (req, res, next) => {
 ]
 }
 */
+/*
 router.get("/matrix", async (req, res, next) => {
   try {
     const response = await axios.get(`${URL}s=Matrix&apikey=${API_KEY}`);
@@ -97,6 +137,7 @@ router.get("/matrix", async (req, res, next) => {
 ]
 }
 */
+/*
 router.get("/matrixrevolutions", async (req, res, next) => {
   try {
     const response = await axios.get(`${URL}s=Matrix Revolutions&apikey=${API_KEY}`);
@@ -148,6 +189,7 @@ router.get("/matrixrevolutions", async (req, res, next) => {
 ]
 }
 */
+/*
 router.get("/matrixreloaded", async (req, res, next) => {
   try {
     const response = await axios.get(`${URL}s=Matrix Reloaded&apikey=${API_KEY}`);
@@ -184,5 +226,5 @@ router.get("/matrixreloaded", async (req, res, next) => {
     next(new NotFoundError);
   }
 });
-
+*/
 module.exports = router;

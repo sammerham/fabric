@@ -2,6 +2,7 @@ import { React, useState, useEffect } from 'react';
 import MediaContext from './mediaContext';
 import MediaList from './components/MediaList';
 import ButtonGroup from './components/ButtonGroup';
+import SearchBar from './components/SearchBar';
 const KEY = 'localStorageMatrixKey';
 
 
@@ -17,8 +18,6 @@ const KEY = 'localStorageMatrixKey';
 
 function App() {
   const [data, setData] = useState([]);
-
-
   //! *********** Save and get data from local storage **************
 
   // get data from local storage in first render if any
@@ -36,9 +35,9 @@ function App() {
 //! ******************************************************************
 
   return (
-      <MediaContext.Provider value={{data, setData}}>
-        <ButtonGroup />
-        <MediaList />
+    <MediaContext.Provider value={{ data, setData }}>
+      <ButtonGroup />
+      <MediaList />
       </MediaContext.Provider>
   );
 }
