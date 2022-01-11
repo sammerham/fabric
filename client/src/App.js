@@ -1,8 +1,6 @@
 import { React, useState, useEffect } from 'react';
 import MediaContext from './mediaContext';
 import MediaList from './components/MediaList';
-import ButtonGroup from './components/ButtonGroup';
-import SearchBar from './components/SearchBar';
 import Header from './components/Header';
 const KEY = 'localStorageMatrixKey';
 
