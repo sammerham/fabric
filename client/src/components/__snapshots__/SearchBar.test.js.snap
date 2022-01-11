@@ -10,7 +10,7 @@ exports[`matches snapshot 1`] = `
         class="sc-pVTFL xFLhP"
         id="term"
         name="term"
-        placeholder="Enter a search Term"
+        placeholder="Enter a search term"
         type="text"
         value=""
       />
