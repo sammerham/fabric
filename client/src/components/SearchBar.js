@@ -59,7 +59,7 @@ function SearchBar() {
           type="text"
           name="term"
           id="term"
-          placeholder="Enter a search Term"
+          placeholder="Enter a search term"
           value={formData}
           onChange={handleChange}
         />
