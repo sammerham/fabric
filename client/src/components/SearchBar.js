@@ -17,7 +17,7 @@ import MediaApi from '../api/mediaApi';
  * props:
       None
   
- * App ---->> GroupButton ---->> SearchBar
+ * App ---->> Header ---->> SearchBar
  */
 
 function SearchBar() {
@@ -50,6 +50,8 @@ function SearchBar() {
       fetchMatrixData(formData)
     setFormData("");
   };
+
+
 
 
   return (

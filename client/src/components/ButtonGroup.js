@@ -2,12 +2,10 @@ import { React, useContext } from 'react'
 import {
   StyledButton,
   StyledDivButton,
-  StyledMainTitle
 } from './StyledComponents'
 import MediaContext from '../mediaContext'
 import MediaApi from '../api/mediaApi';
 
-import SearchBar from './SearchBar';
 
 
 /*
@@ -19,7 +17,7 @@ import SearchBar from './SearchBar';
  * props:
       None
   
- * App ---->> GroupButton
+ * App ---->> Header --->> GroupButton
  */
 
 
@@ -44,13 +42,11 @@ function ButtonGroup() {
 
   return (
     <div>
-      <StyledMainTitle bg={'#448565'} className='App-sameh'>Media Information</StyledMainTitle>
       <StyledDivButton>
         <StyledButton bg={'#58755b'} onClick={() => handleClick(() => getMedia('matrix'))}>Matrix</StyledButton>
         <StyledButton bg={'#58755b'} onClick={()=>handleClick(() => getMedia('matrix revolutions'))}>Matrix Revolutions</StyledButton>
         <StyledButton bg={'#58755b'} onClick={ ()=>handleClick(() => getMedia('matrix reloaded'))}>Matrix Reloaded</StyledButton> 
       </StyledDivButton>
-      <SearchBar />
     </div>
   )
 }
