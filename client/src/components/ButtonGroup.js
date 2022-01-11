@@ -29,22 +29,17 @@ function ButtonGroup() {
 
 
 // fn handle click to get the media data
-  
-  const handleClick = (fn) => {
-    async function fetchMatrixData() {
-      const MediaData = await fn();
-      setData(data => MediaData.Search);
-    }
-    fetchMatrixData();
-  };
-
+  async function fetchMediaData(str) {
+    const MediaData = await getMedia(str);
+    setData(data => MediaData.Search);
+  }
 
   return (
     <div>
       <StyledDivButton>
-        <StyledButton bg={'#58755b'} onClick={() => handleClick(() => getMedia('matrix'))}>Matrix</StyledButton>
-        <StyledButton bg={'#58755b'} onClick={()=>handleClick(() => getMedia('matrix revolutions'))}>Matrix Revolutions</StyledButton>
-        <StyledButton bg={'#58755b'} onClick={ ()=>handleClick(() => getMedia('matrix reloaded'))}>Matrix Reloaded</StyledButton> 
+        <StyledButton bg={'#58755b'} onClick={() => fetchMediaData('matrix')}>Matrix</StyledButton>
+        <StyledButton bg={'#58755b'} onClick={() => fetchMediaData('matrix revolutions')}>Matrix Revolutions</StyledButton>
+        <StyledButton bg={'#58755b'} onClick={() => fetchMediaData('matrix reloaded')}>Matrix Reloaded</StyledButton> 
       </StyledDivButton>
     </div>
   )

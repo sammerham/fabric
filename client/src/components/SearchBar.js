@@ -32,7 +32,7 @@ function SearchBar() {
   };
   
   //fn fetch new media data 
-  async function fetchMatrixData(formData) {
+  async function fetchMediaData(formData) {
     const MediaData = await getMedia(formData);
     setData(data => MediaData.Search);
   };
@@ -41,7 +41,7 @@ function SearchBar() {
   const handleSubmit = e => {
     e.preventDefault();
     if (formData)
-    fetchMatrixData(formData)
+    fetchMediaData(formData)
     setFormData("");
   };
   
