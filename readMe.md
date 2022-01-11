@@ -17,6 +17,15 @@ You can get your API key from below link after your sign up:
 
 http://www.omdbapi.com/apikey.aspx
 
+### .env
+
+make sure your .env file has the following variables:
+
+KEY = YOUR_API_KEY_HERE
+TEST = postgresql:///YOURDBTEST
+DEV = postgresql:///YOURDB
+URL=http://www.omdbapi.com/?
+
 ### Starting Server 3001
 ```bash
 node server.js

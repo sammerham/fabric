@@ -2,11 +2,13 @@
 const express = require("express");
 const axios = require("axios");
 const router = express.Router();
-const URL = 'http://www.omdbapi.com/?';
+// const URL = 'http://www.omdbapi.com/?';
+const URL = process.env.URL;
 const API_KEY = process.env.KEY;
-const { NotFoundError } = require("../expressError");
+const { NotFoundError, ExpressError } = require("../expressError");
 const Media = require('../models/media');
 const Poster = require('../models/poster');
+
 
 
 /* GET all media records from db;
@@ -27,7 +29,7 @@ router.get('/', async (req, res, next) => {
     const results = await Media.showAll()
     res.json({ media: results });
   } catch (err) {
-    next(new NotFoundError)
+    next(new ExpressError(err.message));
   }
 });
 
@@ -80,7 +82,7 @@ router.get("/:s", async (req, res, next) => {
     res.status(200).json(response.data);
   }
   catch (err) {
-    next(new NotFoundError);
+    next(new ExpressError(err.message));
   }
 });
 
