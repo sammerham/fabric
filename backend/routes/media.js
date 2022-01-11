@@ -31,6 +31,21 @@ router.get('/', async (req, res, next) => {
   }
 });
 
+
+
+/* GET all media with [:s] search keyword
+{
+"Search": [
+{
+"Title": "CR: Enter the Matrix",
+"Year": "2009",
+"imdbID": "tt1675286",
+"Type": "game",
+"Poster": "https://m.media-amazon.com/images/M/MV5BMTExMzY3NTQ1NjleQTJeQWpwZ15BbWU3MDAyMjk2NzM@._V1_SX300.jpg"
+}, ....
+]
+}
+*/
 router.get("/:s", async (req, res, next) => {
   const term = req.params.s;
   try {
@@ -68,5 +83,6 @@ router.get("/:s", async (req, res, next) => {
     next(new NotFoundError);
   }
 });
-   
+
+
 module.exports = router;
