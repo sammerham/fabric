@@ -38,8 +38,8 @@ function SearchBar() {
 
   //fn fetch new media data 
   async function fetchMatrixData(formData) {
-    const MatrixData = await getMedia(formData);
-      setData(data => MatrixData.Search);
+    const MediaData = await getMedia(formData);
+    setData(data => MediaData.Search);
   };
 
   

@@ -15,9 +15,8 @@ class MediaApi {
     const res = await axios.get(`${URL}media`);
     return res.data;
   };
+  
   static async getMedia(str) {
-    // let newUrl = `${URL}media/${str}`
-    // console.log('newUrl', newUrl)
     const res = await axios.get(`${URL}media/${str}`);
     return res.data;
   };

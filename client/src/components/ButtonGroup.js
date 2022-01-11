@@ -32,8 +32,8 @@ function ButtonGroup() {
   
   const handleClick = (fn) => {
     async function fetchMatrixData() {
-      const MatrixData = await fn();
-      setData(data => MatrixData.Search);
+      const MediaData = await fn();
+      setData(data => MediaData.Search);
     }
     fetchMatrixData();
   };
