@@ -33,9 +33,6 @@ router.get('/', async (req, res, next) => {
 
 router.get("/:s", async (req, res, next) => {
   const term = req.params.s;
-  console.log('term', term)
-  const newURL = `${URL}s=${term}&apikey=${API_KEY}`
-  console.log('newURL in server', newURL);
   try {
     const response = await axios.get(`${URL}s=${term}&apikey=${API_KEY}`);
     const data = response.data['Search'];
