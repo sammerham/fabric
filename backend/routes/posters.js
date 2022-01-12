@@ -23,7 +23,7 @@ const Poster = require('../models/poster');
 router.get('/', async (req, res, next) => {
   try {
     const results = await Poster.showAll()
-    res.json(results);
+    res.status(200).json(results);
   } catch (err) {
     next(new NotFoundError)
   }

@@ -1,8 +1,6 @@
 const db = require("../db");
 
 
-
-
 class Media {
   /** get all media 
     returns

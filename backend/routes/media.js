@@ -26,8 +26,8 @@ const Poster = require('../models/poster');
 */
 router.get('/', async (req, res, next) => {
   try {
-    const results = await Media.showAll()
-    res.json({ media: results });
+    const results = await Media.showAll();
+    res.status(200).json({ media: results });
   } catch (err) {
     next(new ExpressError(err.message));
   }
